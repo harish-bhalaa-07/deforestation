@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<title>Home</title>
+<link href="{{url_for('static',filename='style_1.css')}}" rel="stylesheet">
+<script>
+	function showPopup() {
+		 // Get the custom pop-up element
+		 var customPopup = document.getElementById("customPopup");
+ 
+		 // Display the custom pop-up
+		 customPopup.style.display = "block";
+ 
+		 // Hide the pop-up after 40 seconds
+		 setTimeout(function() {
+			 customPopup.style.display = "none";
+		 }, 40000); // 40 seconds
+	 }
+ </script>
+</head>
+<body>
+
+<div class="wrapper">
+	<header id="header">
+		<div class="container">
+			<a href="#" class="logo">logo</a>
+			<ul class="log">
+				<li><a href="./login.html">Login</a></li>
+				<li><a href="./signup.html">SignUp</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="body-container">
+		<nav class="main_nav">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#services">Features</a></li>
+				<li><a href="#contact">Contact Us</a></li>
+			</ul>
+		</nav>
+		<section class="section" id="home" style="background-image: url({{url_for('static',filename='home3.jpg')}});">
+			<div class="container">
+				<div class="home-section">
+					<h1>Deforestation</h1>
+					<p>Deforestation is the extensive clearing of forests, often due to human activities like logging and farming. This practice leads to dire consequences for the environment, including loss of biodiversity, disrupted ecosystems, and increased greenhouse gas emissions. Deforestation disadvantages are far-reaching, encompassing soil erosion, reduced water quality, and amplified climate change impacts. Addressing deforestation is crucial to preserve our planet's health and maintain a balanced ecosystem for current and future generations.</p>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="about" style="background-image: url({{url_for('static',filename='home3.jpg')}});">
+			<div class="container">
+				<div class="home-section">
+					<h2>About Us</h2>
+					<p>By harnessing AI, forest fire prevention is enhanced through advanced data analysis and deduction. AI algorithms process environmental data, including temperature, humidity, and vegetation levels, to predict fire risks. Through deductive reasoning, AI models can identify potential ignition sources and human activities contributing to fires. This combined approach enables proactive measures and targeted interventions, significantly reducing the occurrence and impact of forest fires while promoting sustainable land management..</p>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="services" style="background-image: url({{url_for('static',filename='home3.jpg')}});">
+			<div class="container">
+				<div class="services-section">
+					<h2>Features</h2>
+					<div class="services-row">
+						<div>
+							<h3>Machine Learning Classification</h3>
+							<form action='/', method="post" enctype="multipart/form-data">
+								<dl>
+										<input class="form-control" type="file" name="imagefile" required>
+										<input class="btn btn-primary mt-3"type="submit" value="Predict Image" >
+								</dl>
+							</form>
+
+							{% if prediction %}
+            				<p class="text-center"> Image is a {{prediction}}</p>
+        					{% endif %}
+
+						</div>
+						<div>
+							<h3>Location of the place in image</h3>
+							<form>
+								<a href="./map.html" target="_blank">Location</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section" id="contact" style="background-image: url(./);">
+			<div class="container">
+				<div class="contact-section">
+					<h2>Contact Us</h2>
+					<form action="">
+						<div>
+							<input type="text" name="" placeholder="Name">
+							<input type="text" name="" placeholder="Email">
+							<select>
+								<option>Services</option>
+								<option>Classification</option>
+								<option>Location</option>
+							</select>
+							<input type="text" placeholder="Message">
+							<input type="submit" value="Submit" name="">
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+	</div>
+	<footer id="footer">
+		<div class="container">
+			<span>Copyright © 2021 Example.com</span>
+			<ul class="social_links">
+				<li><a href="#"><img src="images/fb.png" alt=""></a></li>
+				<li><a href="#"><img src="images/tw.png" alt=""></a></li>
+				<li><a href="#"><img src="images/insta.png" alt=""></a></li>
+				<li><a href="#"><img src="images/wa.png" alt=""></a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+
+</body>
+</html>
+
+
